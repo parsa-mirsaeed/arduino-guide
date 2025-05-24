@@ -1,560 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>راهنمای جامع آردوینو</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-            direction: rtl;
-            scroll-behavior: smooth;
-            -webkit-tap-highlight-color: transparent; /* Removes tap highlight on mobile */
-        }
-        .slide {
-            min-height: 100vh; /* Each slide takes full viewport height */
-            scroll-snap-align: start; /* Snap to start of the slide */
-            scroll-snap-stop: always; /* Ensure snapping occurs */
-            padding: 3rem 1rem; /* Generous padding for mobile, especially top/bottom */
-            display: flex; /* Using flex for centering content */
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .slide-content {
-            max-width: 800px; /* Max width for content readability on larger screens */
-            width: 100%; /* Ensure content uses available width */
-            margin: auto;
-        }
-        /* Custom styles for better presentation feel */
-        h1, h2, h3 {
-            font-weight: 700;
-        }
-        .table-responsive {
-            overflow-x: auto; /* Allows horizontal scrolling for tables on small screens */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-        }
-        /* Ensure full width for small screens and adjust padding */
-        @media (max-width: 768px) {
-            .slide {
-                padding: 2rem 1rem; /* Slightly reduced padding for smaller screens */
-            }
-            .slide-content {
-                padding-left: 0.5rem; /* Fine-tune padding for content on small screens */
-                padding-right: 0.5rem;
-            }
-            .table-responsive table {
-                min-width: 500px; /* Ensure table content is scrollable if too wide */
-            }
-            h1 {
-                font-size: 2.5rem; /* Adjust h1 size for mobile (Tailwind: text-4xl) */
-            }
-            h2 {
-                font-size: 1.875rem; /* Adjust h2 size for mobile (Tailwind: text-3xl) */
-            }
-        }
-        /* Mobile-first approach is central to Tailwind.
-           The styles above and classes used in HTML ensure responsiveness.
-           - Viewport meta tag is set.
-           - Flexbox and Grid are used with responsive prefixes (sm:, md:, lg:).
-           - Padding and font sizes adapt across breakpoints.
-           - Images are responsive (max-w-full by default with Tailwind).
-           - Tables have overflow for smaller screens.
-        */
-
-        /* Animation base classes */
-        .opacity-0 { opacity: 0; }
-        .translate-y-5 { transform: translateY(1.25rem); }
-        .-translate-y-5 { transform: translateY(-1.25rem); }
-        .opacity-100 { opacity: 1; }
-        .translate-y-0 { transform: translateY(0); }
-        .transition-all { transition-property: all; }
-        .duration-1000 { transition-duration: 1000ms; }
-        .ease-out { transition-timing-function: ease-out; }
-
-    </style>
-</head>
-<body class="bg-gray-900 text-white leading-relaxed">
-
-    <div id="presentation-container" class="scroll-smooth">
-
-        <section id="slide1" class="slide bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-800 text-center">
-            <div class="slide-content">
-                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 animate-fade-in-down">آردوینو: راهنمای شما برای ورود به دنیای الکترونیک و نوآوری</h1>
-                <p class="text-xl sm:text-2xl md:text-3xl mb-8 animate-fade-in-up">کشف پلتفرم میکروکنترلر برای پروژه‌های تعاملی و یادگیری</p>
-                <div class="animate-fade-in text-sm sm:text-base md:text-lg">
-                    <p>یک راهنمای جامع برای شروع کار با آردوینو</p>
-                </div>
-                 <img src="https://placehold.co/600x300/7E57C2/FFFFFF?text=Arduino+Board+Concept&font=Vazirmatn" alt="تصویر مفهومی برد آردوینو" class="mt-8 mx-auto rounded-lg shadow-xl w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg" onerror="this.src='https://placehold.co/600x300/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-            </div>
-        </section>
-
-        <section id="slide2" class="slide bg-gray-800">
-            <div class="slide-content text-center md:text-right">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">آردوینو چیست و چرا اهمیت دارد؟</h2>
-                <ul class="list-disc list-inside text-lg sm:text-xl md:text-2xl space-y-4 mb-8 text-gray-300 text-right">
-                    <li>آردوینو، یک پلتفرم الکترونیکی <strong class="text-indigo-400">متن‌باز</strong>، انقلابی در دنیای ساخت و نوآوری.</li>
-                    <li>طراحی شده برای <strong class="text-indigo-400">همه</strong>؛ از مبتدیان کنجکاو تا متخصصان باتجربه.</li>
-                    <li>کلیدی برای ورود به دنیای الکترونیک، رباتیک و اینترنت اشیا (IoT).</li>
-                    <li>برنامه‌نویسی ساده با C/C++ از طریق Arduino IDE.</li>
-                </ul>
-                <img src="https://placehold.co/500x300/4A5568/FFFFFF?text=Creative+Electronics&font=Vazirmatn" alt="تصویر مفهومی خلاقیت و تکنولوژی" class="mt-8 mx-auto rounded-lg shadow-lg w-full max-w-xs sm:max-w-sm md:max-w-md" onerror="this.src='https://placehold.co/500x300/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-            </div>
-        </section>
-
-        <section id="slide3" class="slide bg-gray-700">
-            <div class="slide-content">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center">از ایتالیا تا جهان: داستان تولد آردوینو</h2>
-                <div class="space-y-6 md:space-y-8">
-                    <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-xl transform hover:scale-105 transition-transform">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-indigo-400 mb-2">۲۰۰۵ - ایوریا، ایتالیا 🇮🇹</h3>
-                        <p class="text-base sm:text-lg">توسعه توسط ماسیمو بانزی و همکاران در موسسه طراحی ایوریا.</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-xl transform hover:scale-105 transition-transform">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-indigo-400 mb-2">هدف اولیه 🎯</h3>
-                        <p class="text-base sm:text-lg">پلتفرمی مقرون‌به‌صرفه و ساده برای آموزش طراحی تعاملی به دانشجویان.</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-xl transform hover:scale-105 transition-transform">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-indigo-400 mb-2">وضعیت فعلی 🌍</h3>
-                        <p class="text-base sm:text-lg">یکی از محبوب‌ترین ابزارها برای آموزش و پروژه‌های DIY در سراسر جهان.</p>
-                    </div>
-                </div>
-                <p class="mt-10 text-lg sm:text-xl text-center italic">"از یک نیاز آموزشی تا یک پدیده جهانی در نوآوری."</p>
-            </div>
-        </section>
-
-        <section id="slide4" class="slide bg-gray-800">
-            <div class="slide-content">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center">نگاهی دقیق‌تر: با قلب تپنده آردوینو آشنا شوید!</h2>
-                <img src="https://placehold.co/700x400/4A5568/FFFFFF?text=Arduino+UNO+Components&font=Vazirmatn" alt="تصویر برد آردوینو UNO با برچسب اجزا" class="mb-8 mx-auto rounded-lg shadow-xl w-full max-w-sm md:max-w-md lg:max-w-lg" onerror="this.src='https://placehold.co/700x400/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                <div class="table-responsive bg-gray-700 p-3 md:p-6 rounded-lg shadow-lg">
-                    <table class="w-full text-base sm:text-lg text-center">
-                        <thead class="border-b-2 border-indigo-500">
-                            <tr>
-                                <th class="p-2 sm:p-3">آیکون</th>
-                                <th class="p-2 sm:p-3">جزء</th>
-                                <th class="p-2 sm:p-3">عملکرد کلیدی</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-b border-gray-600 hover:bg-gray-600 transition-colors">
-                                <td class="p-2 sm:p-3">🧠</td>
-                                <td class="p-2 sm:p-3">میکروکنترلر</td>
-                                <td class="p-2 sm:p-3 text-right">مغز پردازش (مثلاً ATmega328 در آردوینو UNO)</td>
-                            </tr>
-                            <tr class="border-b border-gray-600 hover:bg-gray-600 transition-colors">
-                                <td class="p-2 sm:p-3">🔌</td>
-                                <td class="p-2 sm:p-3">پورت USB</td>
-                                <td class="p-2 sm:p-3 text-right">برای برنامه‌ریزی و تأمین برق</td>
-                            </tr>
-                            <tr class="border-b border-gray-600 hover:bg-gray-600 transition-colors">
-                                <td class="p-2 sm:p-3">↔️</td>
-                                <td class="p-2 sm:p-3">پین‌های دیجیتال/آنالوگ</td>
-                                <td class="p-2 sm:p-3 text-right">برای اتصال سنسورها و عملگرها</td>
-                            </tr>
-                            <tr class="border-b border-gray-600 hover:bg-gray-600 transition-colors">
-                                <td class="p-2 sm:p-3">⚡</td>
-                                <td class="p-2 sm:p-3">پین‌های تغذیه</td>
-                                <td class="p-2 sm:p-3 text-right">(VCC و GND) برای تأمین برق به اجزای متصل</td>
-                            </tr>
-                            <tr class="hover:bg-gray-600 transition-colors">
-                                <td class="p-2 sm:p-3">⏱️</td>
-                                <td class="p-2 sm:p-3">کریستال ساعت</td>
-                                <td class="p-2 sm:p-3 text-right">حفظ زمان‌بندی دقیق برای عملکرد میکروکنترلر</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section id="slide5" class="slide bg-gray-700">
-            <div class="slide-content text-center">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">هر پروژه، آردوینو خاص خود را می‌طلبد!</h2>
-                <p class="text-lg sm:text-xl md:text-2xl mb-10">مروری بر خانواده آردوینو: "آردوینو فقط یک برد نیست، یک خانواده است! هر کدام با ویژگی‌های منحصربه‌فرد برای نیازهای متفاوت."</p>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-6">
-                    <div class="bg-gray-800 p-3 md:p-4 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform">
-                        <img src="https://placehold.co/150x100/7E57C2/FFFFFF?text=UNO&font=Vazirmatn" alt="آردوینو UNO" class="mx-auto mb-2 rounded w-full max-w-[150px]" onerror="this.src='https://placehold.co/150x100/CCCCCC/000000?text=UNO&font=Vazirmatn';">
-                        <p class="text-sm sm:text-base">آردوینو UNO</p>
-                    </div>
-                    <div class="bg-gray-800 p-3 md:p-4 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform">
-                        <img src="https://placehold.co/150x100/5C6BC0/FFFFFF?text=Nano&font=Vazirmatn" alt="آردوینو Nano" class="mx-auto mb-2 rounded w-full max-w-[150px]" onerror="this.src='https://placehold.co/150x100/CCCCCC/000000?text=Nano&font=Vazirmatn';">
-                        <p class="text-sm sm:text-base">آردوینو Nano</p>
-                    </div>
-                    <div class="bg-gray-800 p-3 md:p-4 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform">
-                        <img src="https://placehold.co/150x100/42A5F5/FFFFFF?text=Mega&font=Vazirmatn" alt="آردوینو Mega" class="mx-auto mb-2 rounded w-full max-w-[150px]" onerror="this.src='https://placehold.co/150x100/CCCCCC/000000?text=Mega&font=Vazirmatn';">
-                        <p class="text-sm sm:text-base">آردوینو Mega</p>
-                    </div>
-                    <div class="bg-gray-800 p-3 md:p-4 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform">
-                        <img src="https://placehold.co/150x100/29B6F6/FFFFFF?text=Leonardo&font=Vazirmatn" alt="آردوینو Leonardo" class="mx-auto mb-2 rounded w-full max-w-[150px]" onerror="this.src='https://placehold.co/150x100/CCCCCC/000000?text=Leonardo&font=Vazirmatn';">
-                        <p class="text-sm sm:text-base">آردوینو Leonardo</p>
-                    </div>
-                    <div class="bg-gray-800 p-3 md:p-4 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform">
-                        <img src="https://placehold.co/150x100/26A69A/FFFFFF?text=Due&font=Vazirmatn" alt="آردوینو Due" class="mx-auto mb-2 rounded w-full max-w-[150px]" onerror="this.src='https://placehold.co/150x100/CCCCCC/000000?text=Due&font=Vazirmatn';">
-                        <p class="text-sm sm:text-base">آردوینو Due</p>
-                    </div>
-                    <div class="bg-gray-800 p-3 md:p-4 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform">
-                        <img src="https://placehold.co/150x100/66BB6A/FFFFFF?text=Pro+Mini&font=Vazirmatn" alt="آردوینو Pro Mini" class="mx-auto mb-2 rounded w-full max-w-[150px]" onerror="this.src='https://placehold.co/150x100/CCCCCC/000000?text=Pro+Mini&font=Vazirmatn';">
-                        <p class="text-sm sm:text-base">آردوینو Pro Mini</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="slide6" class="slide bg-gray-800">
-            <div class="slide-content">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center">انتخاب هوشمندانه: کدام آردوینو برای پروژه شما مناسب‌تر است؟</h2>
-                <div class="table-responsive bg-gray-700 p-2 md:p-4 rounded-lg shadow-xl">
-                    <table class="w-full text-xs sm:text-sm md:text-base text-center">
-                        <thead class="border-b-2 border-indigo-500">
-                            <tr>
-                                <th class="p-1 sm:p-2 md:p-3">برد</th>
-                                <th class="p-1 sm:p-2 md:p-3 hidden sm:table-cell">تصویر</th>
-                                <th class="p-1 sm:p-2 md:p-3">کاربرد</th>
-                                <th class="p-1 sm:p-2 md:p-3">مزیت</th>
-                                <th class="p-1 sm:p-2 md:p-3">محدودیت</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-b border-gray-600 hover:bg-gray-600 transition-colors">
-                                <td class="p-1 sm:p-2 md:p-3 font-semibold">UNO</td>
-                                <td class="p-1 sm:p-2 md:p-3 hidden sm:table-cell"><img src="https://placehold.co/60x40/7E57C2/FFFFFF?text=UNO&font=Vazirmatn" alt="UNO" class="mx-auto rounded h-8 sm:h-10" onerror="this.src='https://placehold.co/60x40/CCCCCC/000000?text=UNO&font=Vazirmatn';"></td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">پایه، آموزش</td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">محبوب، آسان</td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">حافظه/پین کم</td>
-                            </tr>
-                            <tr class="border-b border-gray-600 hover:bg-gray-600 transition-colors">
-                                <td class="p-1 sm:p-2 md:p-3 font-semibold">Nano</td>
-                                <td class="p-1 sm:p-2 md:p-3 hidden sm:table-cell"><img src="https://placehold.co/60x40/5C6BC0/FFFFFF?text=Nano&font=Vazirmatn" alt="Nano" class="mx-auto rounded h-8 sm:h-10" onerror="this.src='https://placehold.co/60x40/CCCCCC/000000?text=Nano&font=Vazirmatn';"></td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">فشرده</td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">کوچک</td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">اتصال دستی</td>
-                            </tr>
-                             <tr class="border-b border-gray-600 hover:bg-gray-600 transition-colors">
-                                <td class="p-1 sm:p-2 md:p-3 font-semibold">Mega</td>
-                                <td class="p-1 sm:p-2 md:p-3 hidden sm:table-cell"><img src="https://placehold.co/60x40/42A5F5/FFFFFF?text=Mega&font=Vazirmatn" alt="Mega" class="mx-auto rounded h-8 sm:h-10" onerror="this.src='https://placehold.co/60x40/CCCCCC/000000?text=Mega&font=Vazirmatn';"></td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">رباتیک پیشرفته</td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">پین/حافظه زیاد</td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">بزرگ، گران</td>
-                            </tr>
-                            <tr class="border-b border-gray-600 hover:bg-gray-600 transition-colors">
-                                <td class="p-1 sm:p-2 md:p-3 font-semibold">Leonardo</td>
-                                <td class="p-1 sm:p-2 md:p-3 hidden sm:table-cell"><img src="https://placehold.co/60x40/29B6F6/FFFFFF?text=Leo&font=Vazirmatn" alt="Leonardo" class="mx-auto rounded h-8 sm:h-10" onerror="this.src='https://placehold.co/60x40/CCCCCC/000000?text=Leo&font=Vazirmatn';"></td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">دستگاه HID</td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">شبیه‌سازی USB</td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">سازگاری کم</td>
-                            </tr>
-                            <tr class="border-b border-gray-600 hover:bg-gray-600 transition-colors">
-                                <td class="p-1 sm:p-2 md:p-3 font-semibold">Due</td>
-                                <td class="p-1 sm:p-2 md:p-3 hidden sm:table-cell"><img src="https://placehold.co/60x40/26A69A/FFFFFF?text=Due&font=Vazirmatn" alt="Due" class="mx-auto rounded h-8 sm:h-10" onerror="this.src='https://placehold.co/60x40/CCCCCC/000000?text=Due&font=Vazirmatn';"></td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">پردازش سنگین</td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">قدرت بالا (3.3V)</td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">ناسازگار با 5V</td>
-                            </tr>
-                            <tr class="hover:bg-gray-600 transition-colors">
-                                <td class="p-1 sm:p-2 md:p-3 font-semibold">Pro Mini</td>
-                                <td class="p-1 sm:p-2 md:p-3 hidden sm:table-cell"><img src="https://placehold.co/60x40/66BB6A/FFFFFF?text=ProMini&font=Vazirmatn" alt="Pro Mini" class="mx-auto rounded h-8 sm:h-10" onerror="this.src='https://placehold.co/60x40/CCCCCC/000000?text=ProMini&font=Vazirmatn';"></td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">تولیدی، کم‌مصرف</td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">کارآمد</td>
-                                <td class="p-1 sm:p-2 md:p-3 text-right">نیاز به پروگرامر</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section id="slide7" class="slide bg-gray-700">
-            <div class="slide-content text-center">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">آردوینو در عمل: از کلاس درس تا صنعت</h2>
-                <p class="text-lg sm:text-xl md:text-2xl mb-10">"بیایید ببینیم با این پلتفرم شگفت‌انگیز چه دنیاهایی را می‌توان ساخت!"</p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                    <a href="#slide8" class="block bg-indigo-600 hover:bg-indigo-700 p-4 md:p-6 rounded-lg shadow-xl transform hover:scale-105 transition-all">
-                        <h3 class="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">🎓 آموزشی و پایه</h3>
-                        <p class="text-xs sm:text-sm">اولین قدم‌ها در الکترونیک.</p>
-                    </a>
-                    <a href="#slide9" class="block bg-purple-600 hover:bg-purple-700 p-4 md:p-6 rounded-lg shadow-xl transform hover:scale-105 transition-all">
-                        <h3 class="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">🤖 رباتیک</h3>
-                        <p class="text-xs sm:text-sm">به ربات‌ها جان ببخشید.</p>
-                    </a>
-                    <a href="#slide10" class="block bg-teal-600 hover:bg-teal-700 p-4 md:p-6 rounded-lg shadow-xl transform hover:scale-105 transition-all">
-                        <h3 class="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">🏠 خانه هوشمند</h3>
-                        <p class="text-xs sm:text-sm">خانه‌ای که شما را می‌فهمد.</p>
-                    </a>
-                    <a href="#slide11" class="block bg-green-600 hover:bg-green-700 p-4 md:p-6 rounded-lg shadow-xl transform hover:scale-105 transition-all">
-                        <h3 class="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">🌱 کشاورزی و محیط زیست</h3>
-                        <p class="text-xs sm:text-sm">فناوری سبز برای آینده.</p>
-                    </a>
-                    <a href="#slide12" class="block bg-sky-600 hover:bg-sky-700 p-4 md:p-6 rounded-lg shadow-xl transform hover:scale-105 transition-all col-span-1 sm:col-span-2 lg:col-span-1">
-                        <h3 class="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">🌐 اینترنت اشیا (IoT)</h3>
-                        <p class="text-xs sm:text-sm">اتصال همه‌چیز به همه‌جا.</p>
-                    </a>
-                </div>
-                 <img src="https://placehold.co/600x300/718096/FFFFFF?text=Arduino+Projects+Collage&font=Vazirmatn" alt="کلاژ پروژه‌های آردوینو" class="mt-10 mx-auto rounded-lg shadow-xl w-full max-w-xs sm:max-w-sm md:max-w-md" onerror="this.src='https://placehold.co/600x300/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-            </div>
-        </section>
-
-        <section id="slide8" class="slide bg-gray-800">
-            <div class="slide-content">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center">اولین قدم‌ها در دنیای آردوینو</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                    <div class="bg-gray-700 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/7E57C2/FFFFFF?text=LED+Blink&font=Vazirmatn" alt="کنترل LED" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-indigo-400 mb-2">کنترل LED</h3>
-                        <p class="text-sm sm:text-base">کنترل ساده LED با سیگنال‌های HIGH/LOW. آشنایی با مفاهیم پایه دیجیتال.</p>
-                    </div>
-                    <div class="bg-gray-700 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/5C6BC0/FFFFFF?text=DHT11+Sensor&font=Vazirmatn" alt="سنجش دما با DHT11" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-indigo-400 mb-2">سنجش دما (DHT11)</h3>
-                        <p class="text-sm sm:text-base">اندازه‌گیری دما و رطوبت محیط. درک ورودی‌های سنسور.</p>
-                    </div>
-                    <div class="bg-gray-700 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/42A5F5/FFFFFF?text=LDR+Sensor&font=Vazirmatn" alt="تشخیص نور با فتورزیستور" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-indigo-400 mb-2">تشخیص نور (LDR)</h3>
-                        <p class="text-sm sm:text-base">اندازه‌گیری شدت نور محیط و واکنش به آن. ساخت سیستم‌های خودکار.</p>
-                    </div>
-                </div>
-                <p class="mt-6 text-base sm:text-lg text-center italic">با فتورزیستور می‌توانید نور محیط را سنجیده و پروژه‌هایی مانند چراغ‌های خودکار شب یا سیستم‌های هشدار تغییر نور بسازید.</p>
-            </div>
-        </section>
-
-        <section id="slide9" class="slide bg-gray-700">
-            <div class="slide-content">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center">به ربات‌ها جان ببخشید: آردوینو در رباتیک</h2>
-                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                    <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/7E57C2/FFFFFF?text=Line+Follower&font=Vazirmatn" alt="ربات دنبال کننده خط" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-purple-400 mb-2">ربات دنبال‌کننده خط</h3>
-                        <p class="text-sm sm:text-base">استفاده از سنسورهای IR برای دنبال کردن خطوط. آشنایی با کنترل بازخورد.</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/5C6BC0/FFFFFF?text=Robotic+Arm&font=Vazirmatn" alt="بازوی رباتیک" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-purple-400 mb-2">بازوی رباتیک</h3>
-                        <p class="text-sm sm:text-base">کنترل سروو موتورها برای حرکت و دستکاری اشیا. مقدمه‌ای بر سینماتیک.</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/42A5F5/FFFFFF?text=Obstacle+Avoider&font=Vazirmatn" alt="ربات اجتناب از مانع" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-purple-400 mb-2">ربات اجتناب از مانع</h3>
-                        <p class="text-sm sm:text-base">استفاده از سنسورهای اولتراسونیک برای تشخیص موانع. اصول ناوبری خودکار.</p>
-                    </div>
-                </div>
-                <p class="mt-6 text-base sm:text-lg text-center italic">کنترل روشنایی، قفل‌ها و پرده‌ها تنها بخشی از امکانات خانه هوشمند با آردوینو است.</p>
-            </div>
-        </section>
-
-        <section id="slide10" class="slide bg-gray-800">
-            <div class="slide-content">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center">خانه‌ای هوشمند با آردوینو</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                    <div class="bg-gray-700 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/26A69A/FFFFFF?text=Mobile+Light+Control&font=Vazirmatn" alt="روشنایی کنترل شده با موبایل" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-teal-400 mb-2">روشنایی با موبایل</h3>
-                        <p class="text-sm sm:text-base">کنترل چراغ‌ها با ESP8266 و اپلیکیشن موبایل. تجربه IoT در خانه.</p>
-                    </div>
-                    <div class="bg-gray-700 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/29B6F6/FFFFFF?text=RFID+Door+Lock&font=Vazirmatn" alt="قفل هوشمند درب با RFID" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-teal-400 mb-2">قفل هوشمند RFID</h3>
-                        <p class="text-sm sm:text-base">ایمن‌سازی درب‌ها با کارت‌های RFID. کنترل دسترسی هوشمند.</p>
-                    </div>
-                    <div class="bg-gray-700 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/66BB6A/FFFFFF?text=Light+Controlled+Curtains&font=Vazirmatn" alt="پرده های کنترل شده با نور" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-teal-400 mb-2">پرده‌های هوشمند</h3>
-                        <p class="text-sm sm:text-base">باز و بسته شدن خودکار پرده‌ها بر اساس نور محیط (LDR). خانه پاسخگو.</p>
-                    </div>
-                </div>
-                <p class="mt-6 text-base sm:text-lg text-center italic">کدام ویژگی خانه هوشمند برای شما جذاب‌تر است؟</p>
-            </div>
-        </section>
-
-        <section id="slide11" class="slide bg-gray-700">
-            <div class="slide-content">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center">آردوینو، یاور طبیعت و کشاورزی</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                    <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/9CCC65/FFFFFF?text=Auto+Irrigation&font=Vazirmatn" alt="سیستم آبیاری خودکار" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-green-400 mb-2">آبیاری خودکار</h3>
-                        <p class="text-sm sm:text-base">نظارت بر رطوبت خاک و آبیاری هوشمند. مدیریت بهینه منابع آبی.</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/7CB342/FFFFFF?text=Greenhouse+Monitoring&font=Vazirmatn" alt="نظارت بر دمای گلخانه" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-green-400 mb-2">نظارت گلخانه</h3>
-                        <p class="text-sm sm:text-base">کنترل دما و رطوبت با DHT22. ایجاد شرایط ایده‌آل رشد.</p>
-                    </div>
-                    <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/AED581/FFFFFF?text=Weather+Station&font=Vazirmatn" alt="ایستگاه هواشناسی" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-green-400 mb-2">ایستگاه هواشناسی</h3>
-                        <p class="text-sm sm:text-base">جمع‌آوری داده‌های دما، رطوبت، فشار و باد. درک شرایط اقلیمی.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="slide12" class="slide bg-gray-800">
-            <div class="slide-content">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center">آردوینو و اینترنت اشیا (IoT)</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                     <div class="bg-gray-700 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/29B6F6/FFFFFF?text=Remote+Temp+Monitor&font=Vazirmatn" alt="نظارت بر دما از راه دور" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-sky-400 mb-2">نظارت دما از راه دور</h3>
-                        <p class="text-sm sm:text-base">ارسال داده‌های سنسور دما به سرور آنلاین. قدرت داده‌های ابری.</p>
-                    </div>
-                    <div class="bg-gray-700 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/03A9F4/FFFFFF?text=WiFi+Alert+System&font=Vazirmatn" alt="سیستم هشدار WiFi" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-sky-400 mb-2">سیستم هشدار WiFi</h3>
-                        <p class="text-sm sm:text-base">ارسال پیام هشدار (مثلاً افزایش دما) به موبایل. اطلاع‌رسانی خودکار.</p>
-                    </div>
-                    <div class="bg-gray-700 p-4 md:p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/300x200/00ACC1/FFFFFF?text=Internet+Controlled+Devices&font=Vazirmatn" alt="دستگاه های کنترل شده با اینترنت" class="rounded-md mb-3 w-full max-w-[250px] mx-auto" onerror="this.src='https://placehold.co/300x200/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                        <h3 class="text-xl sm:text-2xl font-semibold text-sky-400 mb-2">کنترل با اینترنت</h3>
-                        <p class="text-sm sm:text-base">کنترل لوازم خانگی از راه دور. اتوماسیون و کنترل بی‌حد و مرز.</p>
-                    </div>
-                </div>
-                <p class="mt-6 text-base sm:text-lg text-center italic">پروژه‌های IoT با آردوینو به شما امکان می‌دهند دستگاه‌ها را از راه دور کنترل و نظارت کنید.</p>
-            </div>
-        </section>
-
-        <section id="slide13" class="slide bg-gray-700">
-            <div class="slide-content text-center">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">آردوینو: اکوسیستم نوآوری بی‌پایان</h2>
-                <ul class="list-none space-y-3 sm:space-y-4 text-lg sm:text-xl md:text-2xl mb-8 text-gray-300">
-                    <li>"آردوینو شکاف بین <strong class="text-indigo-400">دانش نظری</strong> و <strong class="text-indigo-400">کاربرد عملی</strong> را پر می‌کند."</li>
-                    <li>"انعطاف‌پذیری و قابلیت‌های قدرتمند، آن را به ابزاری محبوب در <strong class="text-indigo-400">آموزش، سرگرمی و صنعت</strong> تبدیل کرده است."</li>
-                    <li>"با گسترش <strong class="text-indigo-400">اینترنت اشیا</strong>، آردوینو ابزاری <strong class="text-indigo-400">اساسی</strong> برای نمونه‌سازی و نوآوری است."</li>
-                </ul>
-                <img src="https://placehold.co/600x300/718096/FFFFFF?text=Future+with+Arduino&font=Vazirmatn" alt="تصویر مفهومی آینده با آردوینو" class="mt-10 mx-auto rounded-lg shadow-xl w-full max-w-xs sm:max-w-sm md:max-w-md" onerror="this.src='https://placehold.co/600x300/CCCCCC/000000?text=Image+Not+Found&font=Vazirmatn';">
-                <p class="mt-10 text-lg sm:text-xl italic">"پروژه بعدی آردوینو شما چه خواهد بود؟ ایده‌های خود را برای ساختن آینده به کار گیرید!"</p>
-            </div>
-        </section>
-
-        <section id="slide14" class="slide bg-gray-800">
-            <div class="slide-content text-center">
-                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-indigo-400">ادامه دهید و کاوش کنید!</h2>
-                <p class="text-2xl sm:text-3xl md:text-4xl mb-10">دنیای آردوینو پر از امکانات است.</p>
-                <p class="text-base sm:text-lg mb-4">از منابع آنلاین و جامعه بزرگ آردوینو برای یادگیری بیشتر استفاده کنید.</p>
-            </div>
-        </section>
-
-        <section id="slide15" class="slide bg-gray-700">
-            <div class="slide-content">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center">منابع مفید</h2>
-                <ul class="list-disc list-inside space-y-2 sm:space-y-3 text-base sm:text-lg text-gray-300 text-right">
-                    <li>وب‌سایت رسمی آردوینو: <a href="https://www.arduino.cc" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline">arduino.cc</a></li>
-                    <li>مرجع زبان برنامه‌نویسی آردوینو: <a href="https://www.arduino.cc/reference/en/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline">Arduino Language Reference</a></li>
-                    <li>پروژه‌های آردوینو در وب‌سایت Instructables: <a href="https://www.instructables.com/circuits/arduino/projects/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline">Instructables Arduino Projects</a></li>
-                    <li>انجمن رسمی آردوینو: <a href="https://forum.arduino.cc/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:underline">Arduino Forum</a></li>
-                </ul>
-                <p class="mt-8 text-xs sm:text-sm md:text-base text-center italic">
-                    این راهنما با هدف ارائه اطلاعات پایه و کاربردی در مورد پلتفرم آردوینو تهیه شده است.
-                </p>
-            </div>
-        </section>
-
-    </div>
-
-    <div class="fixed bottom-0 left-0 right-0 bg-gray-900 bg-opacity-90 p-3 flex justify-center space-x-3 space-x-reverse z-50">
-        <button id="prevSlide" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 sm:py-3 sm:px-5 rounded-lg transition-colors disabled:opacity-50 text-sm sm:text-base">قبلی</button>
-        <button id="nextSlide" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 sm:py-3 sm:px-5 rounded-lg transition-colors text-sm sm:text-base">بعدی</button>
-    </div>
-
-    <script>
-        // JavaScript for slide navigation and animations
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
-        const prevButton = document.getElementById('prevSlide');
-        const nextButton = document.getElementById('nextSlide');
-
-        function showSlide(index) {
-            // Scroll to the target slide
-            if (slides[index]) {
-                slides[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-            // Note: updateNavButtons is now called by IntersectionObserver
-        }
-        
-        function updateNavButtons() {
-            prevButton.disabled = currentSlide === 0;
-            nextButton.disabled = currentSlide === slides.length - 1;
-        }
-
-        prevButton.addEventListener('click', () => {
-            if (currentSlide > 0) {
-                // currentSlide--; // Let IntersectionObserver handle currentSlide update
-                const targetSlideIndex = Math.max(0, currentSlide - 1);
-                showSlide(targetSlideIndex);
-            }
-        });
-
-        nextButton.addEventListener('click', () => {
-            if (currentSlide < slides.length - 1) {
-                // currentSlide++; // Let IntersectionObserver handle currentSlide update
-                const targetSlideIndex = Math.min(slides.length - 1, currentSlide + 1);
-                showSlide(targetSlideIndex);
-            }
-        });
-        
-        // Intersection Observer to update currentSlide based on scroll
-        const observerOptions = {
-            root: null, // observes intersections relative to the viewport
-            rootMargin: '0px',
-            threshold: 0.6 // 60% of the slide should be visible to be considered "current"
-        };
-
-        const observerCallback = (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const intersectingSlideId = entry.target.id;
-                    slides.forEach((slide, index) => {
-                        if (slide.id === intersectingSlideId) {
-                            currentSlide = index;
-                            updateNavButtons();
-                        }
-                    });
-                }
-            });
-        };
-
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
-        slides.forEach(slide => observer.observe(slide));
-
-        // Initial setup: Scroll to the first slide without forcing an immediate visual update of buttons
-        // The IntersectionObserver will handle the initial button state correctly once the first slide is in view.
-        if (slides.length > 0) {
-             // slides[0].scrollIntoView({ behavior: 'auto', block: 'start' }); // Initial position
-        }
-        updateNavButtons(); // Call once on load for initial state based on slide 0
-
-        // Add fade-in animations for elements
-        const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-fade-in-down, .animate-fade-in-up');
-        const animationObserver = new IntersectionObserver((entries, animObserverInstance) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0');
-                    if (entry.target.classList.contains('animate-fade-in-down-setup')) {
-                         entry.target.classList.remove('-translate-y-5');
-                    }
-                    if (entry.target.classList.contains('animate-fade-in-up-setup')) {
-                         entry.target.classList.remove('translate-y-5');
-                    }
-                    animObserverInstance.unobserve(entry.target); // Stop observing after animation
-                }
-            });
-        }, { threshold: 0.15 }); // Trigger animation when 15% of element is visible
-
-        animatedElements.forEach(el => {
-            el.classList.add('opacity-0', 'transition-all', 'duration-1000', 'ease-out');
-            if (el.classList.contains('animate-fade-in-down')) {
-                el.classList.add('-translate-y-5', 'animate-fade-in-down-setup');
-            }
-            if (el.classList.contains('animate-fade-in-up')) {
-                 el.classList.add('translate-y-5', 'animate-fade-in-up-setup');
-            }
-            animationObserver.observe(el);
-        });
-
-    </script>
-
-</body>
-</html>
